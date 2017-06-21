@@ -1,0 +1,17 @@
+{
+  "name": "language-pcf",
+  "author": "Jesús Arroyo Torrens",
+  "version": "0.1.0",
+  "description": "Provides basic syntax highlighting for Physical Constraints File (PCF)",
+  "keywords": [
+    "pcf",
+    "physical",
+    "constraints",
+    "icestorm"
+  ],
+  "repository": "https://github.com/Jesus89/atom-language-pcf",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=0.196.0 <2.0.0"
+  }
+}
