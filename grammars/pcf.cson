@@ -9,7 +9,7 @@
     'name': 'comment.line.number-sign.pcf'
   }
   {
-    'match': '\\b(set_io)\\s+(--warn-no-port)\\s+(\\w+)\\s+(\\w+)'
+    'match': '\\b(set_io)\\s+(--warn-no-port)\\s+(\\w+(\\[\\d+\\])*)\\s+(\\w+)'
     'captures':
         '1':
             'name': 'keyword.other.pcf'
@@ -17,17 +17,17 @@
             'name': 'entity.name.tag.pcf'
         '3':
             'name': 'variable.parameter.pcf'
-        '4':
+        '5':
             'name': 'constant.numeric.pcf'
   }
   {
-    'match': '\\b(set_io)\\s+(\\w+)\\s+(\\w+)'
+    'match': '\\b(set_io)\\s+(\\w+(\\[\\d+\\])*)\\s+(\\w+)'
     'captures':
         '1':
             'name': 'keyword.other.pcf'
         '2':
             'name': 'variable.parameter.pcf'
-        '3':
+        '4':
             'name': 'constant.numeric.pcf'
   }
   {
