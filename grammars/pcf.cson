@@ -8,17 +8,6 @@
     'match': '((#).*$[\\n|\\r|\\r\\n]?)'
     'name': 'comment.line.number-sign.pcf'
   }
-    {
-      'match': '\\b(set_io)\\s+(\\w+)\\s+(\\w+)'
-      'captures':
-          '1':
-              'name': 'keyword.other.pcf'
-          '2':
-              'name': 'variable.parameter.pcf'
-          '3':
-              'name': 'constant.numeric.pcf'
-      'name': 'meta.set_io.pcf'
-    }
   {
     'match': '\\b(set_io)\\s+(--warn-no-port)\\s+(\\w+)\\s+(\\w+)'
     'captures':
@@ -30,6 +19,27 @@
             'name': 'variable.parameter.pcf'
         '4':
             'name': 'constant.numeric.pcf'
-    'name': 'meta.set_io--warn-no-port.pcf'
+  }
+  {
+    'match': '\\b(set_io)\\s+(\\w+)\\s+(\\w+)'
+    'captures':
+        '1':
+            'name': 'keyword.other.pcf'
+        '2':
+            'name': 'variable.parameter.pcf'
+        '3':
+            'name': 'constant.numeric.pcf'
+  }
+  {
+    'match': '\\b(set_io)\\s+(--warn-no-port)\\s+'
+    'captures':
+        '1':
+            'name': 'keyword.other.pcf'
+        '2':
+            'name': 'entity.name.tag.pcf'
+  }
+  {
+    'match': '\\b(set_io)\\s+'
+    'name': 'keyword.other.pcf'
   }
 ]
