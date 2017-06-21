@@ -29,8 +29,19 @@ describe 'PCF grammar', ->
     expect(tokens[2]).toEqual value: 'CLK', scopes: ['source.pcf', 'variable.parameter.pcf']
     expect(tokens[4]).toEqual value: '21', scopes: ['source.pcf', 'constant.numeric.pcf']
 
+    {tokens} = grammar.tokenizeLine('set_io data[0] 95')
+    expect(tokens[0]).toEqual value: 'set_io', scopes: ['source.pcf', 'keyword.other.pcf']
+    expect(tokens[2]).toEqual value: 'data[0]', scopes: ['source.pcf', 'variable.parameter.pcf']
+    expect(tokens[4]).toEqual value: '95', scopes: ['source.pcf', 'constant.numeric.pcf']
+
     {tokens} = grammar.tokenizeLine('set_io --warn-no-port CLK 21')
     expect(tokens[0]).toEqual value: 'set_io', scopes: ['source.pcf', 'keyword.other.pcf']
     expect(tokens[2]).toEqual value: '--warn-no-port', scopes: ['source.pcf', 'entity.name.tag.pcf']
     expect(tokens[4]).toEqual value: 'CLK', scopes: ['source.pcf', 'variable.parameter.pcf']
     expect(tokens[6]).toEqual value: '21', scopes: ['source.pcf', 'constant.numeric.pcf']
+
+    {tokens} = grammar.tokenizeLine('set_io --warn-no-port data[0] 95')
+    expect(tokens[0]).toEqual value: 'set_io', scopes: ['source.pcf', 'keyword.other.pcf']
+    expect(tokens[2]).toEqual value: '--warn-no-port', scopes: ['source.pcf', 'entity.name.tag.pcf']
+    expect(tokens[4]).toEqual value: 'data[0]', scopes: ['source.pcf', 'variable.parameter.pcf']
+    expect(tokens[6]).toEqual value: '95', scopes: ['source.pcf', 'constant.numeric.pcf']
