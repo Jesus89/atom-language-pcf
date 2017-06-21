@@ -1,22 +1,35 @@
 'scopeName': 'source.pcf'
+'name': 'PCF'
 'fileTypes': [
   'pcf'
 ]
-'name': 'PCF'
 'patterns': [
   {
-    'include': '#comment'
+    'match': '((#).*$[\\n|\\r|\\r\\n]?)'
+    'name': 'comment.line.number-sign.pcf'
+  }
+    {
+      'match': '\\b(set_io)\\s+(\\w+)\\s+(\\w+)'
+      'captures':
+          '1':
+              'name': 'keyword.other.pcf'
+          '2':
+              'name': 'variable.parameter.pcf'
+          '3':
+              'name': 'constant.numeric.pcf'
+      'name': 'meta.set_io.pcf'
+    }
+  {
+    'match': '\\b(set_io)\\s+(--warn-no-port)\\s+(\\w+)\\s+(\\w+)'
+    'captures':
+        '1':
+            'name': 'keyword.other.pcf'
+        '2':
+            'name': 'entity.name.tag.pcf'
+        '3':
+            'name': 'variable.parameter.pcf'
+        '4':
+            'name': 'constant.numeric.pcf'
+    'name': 'meta.set_io--warn-no-port.pcf'
   }
 ]
-'repository':
-  'comment':
-    'captures':
-      '1':
-        'name': 'comment.line.number-sign.generic-config'
-      '2':
-        'name': 'punctuation.definition.comment.generic-config'
-      '3':
-        'name': 'comment.line.semi-colon.generic-config'
-      '4':
-        'name': 'punctuation.definition.comment.generic-config'
-    'match': '((#).*$\\n?)'
